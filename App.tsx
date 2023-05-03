@@ -8,21 +8,32 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login} from './src/Login';
+import Login from './src/Login';
+import Dashboard from './src/Dashboard';
+import LandingScreen from './src/LandingScreen';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{title: 'Login'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen
+          name = "LandingScreen"
+          component = {LandingScreen}
+          options = {{headerShown: false}}
+      />
+      <Stack.Screen
+          name = "Login"
+          component = {Login}
+          options = {{headerShown: false}}
+      />
+      <Stack.Screen 
+          name = 'Dashboard'
+          component = {Dashboard}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 };
 
